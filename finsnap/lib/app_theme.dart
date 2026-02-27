@@ -103,12 +103,12 @@ class AppTheme {
       hintStyle: TextStyle(color: Color(0xFFB0BAC3), fontSize: 14),
       labelStyle: TextStyle(color: Color(0xFF8A96A3), fontSize: 13),
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       color: Colors.white,
       elevation: 0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
     ),
-    tabBarTheme: TabBarTheme(
+    tabBarTheme: TabBarThemeData(
       labelColor: navy,
       unselectedLabelColor: Colors.grey,
       indicatorColor: amber,

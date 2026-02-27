@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'main.dart' show AppColors;
+import 'package:finsnap/app_colors.dart';
 
 class AddExpenseScreen extends StatefulWidget {
   @override
