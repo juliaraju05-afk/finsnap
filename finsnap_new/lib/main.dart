@@ -22,6 +22,7 @@ import 'add_expense_screen.dart';
 import 'edit_expense_screen.dart';
 import 'stats_screen.dart';
 import 'app_theme.dart';
+import 'login_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,7 +40,7 @@ class FinSnapApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'FinSnap',
       theme: AppTheme.lightTheme,
-      home: HomeScreen(),
+     home: LoginScreen(),
     );
   }
 }
