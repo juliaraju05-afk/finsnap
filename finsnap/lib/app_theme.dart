@@ -10,7 +10,7 @@ class AppTheme {
   static const Color navyLight  = Color(0xFF1A3550);
   static const Color amber      = Color(0xFFF5A623);
   static const Color background = Color(0xFFF7F8FC);
-  static const Color surface    = Colors.white;
+  static const Color surface    = Colors.black;
   static const Color green      = Color(0xFF2ECC71);
   static const Color red        = Color(0xFFE74C3C);
   static const Color textPrimary   = Color(0xFF0D1B2A);
@@ -64,11 +64,11 @@ class AppTheme {
     ),
     appBarTheme: AppBarTheme(
       backgroundColor: navy,
-      foregroundColor: Colors.white,
+      foregroundColor: Colors.black,
       elevation: 0,
       centerTitle: true,
       titleTextStyle: TextStyle(
-        color: Colors.white,
+        color: Colors.black,
         fontSize: 18,
         fontWeight: FontWeight.w700,
         letterSpacing: 0.3,
@@ -77,7 +77,7 @@ class AppTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: navy,
-        foregroundColor: Colors.white,
+        foregroundColor: Colors.black,
         elevation: 0,
         padding: EdgeInsets.symmetric(vertical: 16),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
@@ -86,7 +86,7 @@ class AppTheme {
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: Colors.white,
+      fillColor: Colors.black,
       contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
@@ -104,7 +104,7 @@ class AppTheme {
       labelStyle: TextStyle(color: Color(0xFF8A96A3), fontSize: 13),
     ),
     cardTheme: CardThemeData(
-      color: Colors.white,
+      color: Colors.black,
       elevation: 0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
     ),

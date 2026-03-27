@@ -749,7 +749,7 @@ bool isLikelyBankSMS(String body) {
       floatingActionButton: _AddButton(
         onPressed: () async {
           final result = await Navigator.push(context,
-            MaterialPageRoute(builder: (_) => AddExpenseScreen()));
+            MaterialPageRoute(builder: (_) => AddExpenseScreen(email: userEmail)));
           if (result != null) addExpense(result);
         },
       ),

@@ -12,16 +12,19 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// =======================
 // ✅ CONNECT DB
+// =======================
 mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("🔥 MongoDB Connected"))
 .catch(err => console.log("DB ERROR:", err));
 
+// =======================
 // ✅ TEST ROUTE
+// =======================
 app.get("/", (req, res) => {
   res.send("Backend running 🚀");
 });
-
 
 // =======================
 // ✅ SIGNUP
@@ -55,7 +58,6 @@ app.post("/signup", async (req, res) => {
   }
 });
 
-
 // =======================
 // ✅ LOGIN
 // =======================
@@ -85,27 +87,34 @@ app.post("/login", async (req, res) => {
   }
 });
 
-
 // =======================
-// ✅ ADD EXPENSE
+// ✅ ADD EXPENSE (FIXED)
 // =======================
 app.post("/add-expense", async (req, res) => {
   try {
-    console.log("Incoming expense:", req.body);
+
+    console.log("=================================");
+    console.log("📦 FULL BODY:");
+    console.log(JSON.stringify(req.body, null, 2));
+    console.log("📧 EMAIL:", req.body.userEmail);
+    console.log("=================================");
+
+    if (!req.body.userEmail || req.body.userEmail === "") {
+      return res.status(400).json({ message: "Email missing" });
+    }
 
     const expense = new Expense(req.body);
     await expense.save();
 
-    console.log("Expense saved!");
+    console.log("✅ Expense saved!");
 
     res.json({ message: "Expense saved" });
 
   } catch (err) {
-    console.log("Expense error:", err);
+    console.log("❌ Expense error:", err);
     res.status(500).json({ message: "Error saving expense" });
   }
 });
-
 
 // =======================
 // ✅ GET EXPENSES
@@ -122,7 +131,6 @@ app.get("/expenses/:email", async (req, res) => {
     res.status(500).json({ message: "Error fetching expenses" });
   }
 });
-
 
 // =======================
 app.listen(5000, () => {
